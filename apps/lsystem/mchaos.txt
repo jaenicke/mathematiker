@@ -1,0 +1,665 @@
+*Kochkurve
+06
+F
+F=F+F--F+F
+*Koch-Muster 2
+06
+F
+F=[F-F++F-F]F+F--F+F
+*Koch 5
+04
+F
+F=F+F-F-FFF+F+F-F
+*Kochkurve (veränd.Länge)
+05
+F
+F=F+<06F--F>06+F
+*Quadrat Koch
+04
+F
+F=F+FF-FF-F-F+F+FF-F-F+F+FF+FF-F
+*Plant
+06
+F
+F=F[+F]F[-F]F
+*Plant 10
+10
+F
+F=F[+FF][-FF]F[+FF][-FF]F
+*Busch
+16
+F
+F=FF-[-F+F+F]+[+F-F-F]
+*Busch 2
+16
+F
+F=F[--F]F[++F]
+*Sierpinski 2
+03
+F
+F=F[-F]F[-F]
+*Dreieck
+06
+F
+F=FF[--F][++F]
+*Dreieck 2
+06
+F
+F=FF[--F][++F]F
+*Dreieck 3
+06
+F
+F=FF[--F][++F][F]
+*Curve 4
+04
+F
+F=FF-F-F-FF-F+F
+*Puzzle
+06
+F
+F=F+!F-!F-F
+*Sierpinski Square 2
+04
+F
+F=FFF+F+F+F+FFF
+*Peano 2
+04
+F
+F=FF-F+F+F+F-F-F-F+FF
+*Busch 3
+06
+F
+F=F[+F]F[-F][F]
+*Peano 3
+04
+F
+F=FF-F+FF+F+F-F-F-F+FF
+*Gewitter
+06
+F
+F=F[+F]F[-F]F-F+F
+*Eiskurve
+04
+F
+F=FF+F--F+FF
+*Dreieck 4
+06
+F
+F=FF[--F][++F][G]F
+*Blüten
+05
+F
+F=F-F-F++F+F-F
+*Busch 4
+12
+F
+F=F[+F]F[-F][+F]
+*Busch 5
+28
+F
+F=F[++F]F[--F]F
+*Hilbert-Kurve
+04
+X
+F=F
+X=-YF+XFX+FY-
+Y=+XF-YFY-FX+
+*Koch-Schneeflocke
+06
+F--F--F
+F=F+F--F+F
+*Koch 2
+12
+F---F---F---F
+F=-F+++F---F+
+*Koch 3
+04
+F-F-F-F
+F=F-F+F+FF-F-F+F
+*Koch 6
+04
+F+F+F+F
+F=F-FF+FF+F+F-F-FF+F+F-F-FF-FF+F
+*Dragon
+08
+FX
+X=-FX++FY-
+Y=+FX--FY+
+*Peano 1
+04
+F-F-F-F
+F=F-F+F+F+F-F-F-F+F
+*Cesaro
+34
+FX
+X=----F!X!++++++++F!X!----
+*DoubleCesaro
+04
+F\90F\90F\90F\90
+F=\42!F!/84!F!\42
+*Flowsnake
+06
+FL
+L=FL-FR--FR+FL++FLFL+FR-
+R=+FL-FRFR--FR-FL++FL+FR
+*CantorDust
+06
+F
+F=FGF
+G=GGG
+*Quartett
+04
+FB
+L=-
+R=+
+A=FBFA+LFA+FB-FA
+B=FB+FA-FB-RFBFA
+*Sierpinski 1
+03
+F
+F=FXF
+X=+FXF-FXF-FXF+
+*Sierpinski 3
+03
+F-F-F
+F=F[-F]F
+*Peano 5
+04
+X
+F=F
+X=XFYFX+F+YFXFY-F-XFYFX
+Y=YFXFY-F-XFYFX+F+YFXFY
+*Koch 4
+12
+F++++F++++F
+F=+F--F++F-
+*Sierpinski Square 1
+04
+F
+F=FF+F+F+F+FF
+*Sierpinski Square
+04
+F+F+F+F
+F=FF+F+F+F+FF
+*Curve 1
+04
+F-F-F-F-
+F=FF-F-F-F-F-F+F
+*Curve 2
+04
+F-F-F-F-
+F=FF-F+F-F-FF
+*Curve 3
+04
+F-F-F-F-
+F=F-FF--F-F
+*Pfeilspitzkurve
+06
+YF
+F=F
+X=YF+XF+Y
+Y=XF-YF-X
+*MyTree
+16
+++++F
+F=FF-[XY]+[XY]
+X=+FY
+Y=-FX
+*Dragon 2
+04
+X
+X=X-YF-
+Y=+FX+Y
+*Penrose
+10
++LF--XF---YF--RF
+X=+YF--RF[---LF--XF]+
+Y=-LF++XF[+++YF++RF]-
+L=YF++RF----XF[-YF----LF]++
+R=--YF++++LF[+RF++++XF]--XF
+*Sphinx
+06
+X
+F=GG
+G=GG
+X=+FF-YFF+FF--FFF|X|F--YFFFYFFF|
+Y=-FF+XFF-FF++FFF|Y|F++XFFFXFFF|
+*CircularTile
+24
+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X+X
+F=F
+X=[F+F+F+F[---X-Y]+++++F++++++++F-F-F-F]
+Y=[F+F+F+F[---Y]+++++F++++++++F-F-F-F]
+*Muster
+08
+F
+F=F+F-F-F+F+
+*CesaroFlocke
+36
+FXYFXYFX
+X=----F!X!++++++++F!X!----
+Y=++++++++++++
+*CurveFlow
+03
+F+F+F
+F=FFF-F++F-FFF
+*Eiskurve 2
+04
+F+F+F+F
+F=FF+F--F+FF
+*Eiskurve 3
+04
+F\90F\90F\90F
+F=FF+F--F+FF
+*Eiskurve 4
+04
+F\60F\60F\60F\60F\60F
+F=FF+F--F+FF
+*Koch-Muster 3
+04
+F
+F=F+F-F-F+F
+*Plant 2
+14
+Y
+X=X[-FFF][+FFF]FX
+Y=YFX[+Y][-Y]
+*Koch-Schneeflocke 2
+06
+F--F--F
+F=F-F++F-F
+*Kreuzstichkurve
+04
+F-F-F-F
+F=F+F-F-F+F
+*X-Kurve
+06
+F
+F=F+FF++F++FF+F
+*C-Kurve
+08
+F
+F=+F--F+
+*C-Kurve 2
+08
+F--F--F--F
+F=+F--F+
+*Kreuzkurve
+04
+FX
+X=FX+FX+FXFY-FY-
+Y=+FX+FXFY-FY-FY
+*Sierpinski Teppich
+04
+F
+F=F+F-F-F-G+F+F+F-F
+G=GGG
+*Pentigree
+05
+F-F-F-F-F
+F=F-F++F+F-F-F
+*Randkurve
+04
+XYXYXYX+XYXYXYX+XYXYXYX+XYXYXYX
+X=FX+FX+FXFY-FY-
+Y=+FX+FXFY-FY-FY
+*Box-Fraktal
+04
+F-F-F-F
+F=F-F+F+F-F
+*Curve 5
+03
+F
+F=FFF-F++F-FFF
+*Fass
+04
+-L
+F=F
+L=LF+RFR+FL-F-LFLFL-FRFR+
+R=-LFLF+RFRFR+F+RF-LFL-FR
+*Koch-Muster 1
+06
+F
+F=F+F--F+FF
+*Peano 4
+04
+F
+F=FF+F+F+FF+F+F-F
+*Quadrat Koch 2
+03
+F
+F=F+FF-FF-F-F+F+FF-F-F+F+FF+FF-F
+*Busch 6
+16
+F+F-F-F
+F=FF-<08[-F+F+F]>08+[+F-F-F]
+*Busch 7
+28
+[F[+F]]-F+F
+F=F[++F]<05F>05[--F]<05F>05
+*X-Kurve 2
+06
+F-F-F-F-F-F
+F=F+FF++F++FF+F
+*Busch (farbig)
+16
+F
+F=FF-C[-F+F+F]+C[+F-F-F]
+*Island
+04
+F+F+F+F
+F=FFFF-F+F+F-F[-GFF+F+FF+F]FF
+G=<80G>80
+*Island 2
+04
+F+F+F+F
+F=F+GF-FF-F-FF+G+FF-GF+FF+F+FF-G-FFF
+G=<60G>60
+*Snowflake
+12
+FR
+L=!FRFL!|+<17FR>17+++!FR--FR--FRFL!--
+R=++!FRFL++FL++FL!---<17FL|->17!FRFL!
+*Snowflake 2
+12
+FX
+X=++F!X!FY--FX--FY|+>18FYF!X!++F!Y!++F!Y!FX<18+++F!Y!FX
+Y=FYF!X!+++>18FYF!X!++F!X!++F!Y!FX<18|+FX--FY--FXF!Y!++
+*Peano 6
+08
+FXY++F++FXY++F
+X=XY<14-F>14-FXY++F++FXY
+Y=-<14F->14FXY
+*Peano 7
+08
+FXY++F++FXY++F
+F=F
+X=XY<14-F>14-FXY++F++FXY
+Y=-<14F->14FXY
+*Tree
+06
+A
+F=<14F>14
+X=AA
+Y=B
+A=F[+X]FB
+B=F[-Y]FA
+*Weihnachtsbaum
+20
++++++XLFFF
+F=F
+G=+R[-G]L
+X=[+++G][---G]YX
+Y=YL
+L=[-FFF][+FFF]F
+R=-G[+R]L
+*Busch 8
+28
++++++++G
+F=F[++F]F[--F]F
+G=GFX[++G][--G]
+X=X[--FFF][++FFF]FX
+*Dekkings Kirche
+04
+LRYX
+X=++F--Y-F+R++F--Y-F+R
+Y=++F--Y+F-X
+L=FL+F-XFL-F+R
+R=FL+F-X
+*Vierkantkurve
+04
+F+XF+F+XF
+F=F
+X=XF-F+F-XF+F+XF-F+F-X
+*Vierkantkurve 2
+08
+L--F--L--F
+F=F
+L=+R-F-R+
+R=-L+F+L-
+*H-Kurve
+04
++X
+F=FF
+X=+F+FX++FFX++F+FF+FX++FFX++F+F-
+*Hilbert-Kurve 2
+04
+X
+F=F
+X=XFYFX+F+YFXFY-F-XFYFX
+Y=YFXFY-F-XFYFX+F+YFXFY
+*Klöppel-Kurve
+12
+L
+F=F
+X=---L++F++YFL-
+Y=+RFX--F--R+++
+L=+++X--F--RFX+
+R=-YFL++F++Y---
+*Koch-Fünfeckkurve
+05
+!+F+F+F+F+F
+F=F-F++F-F
+*Moore-Kurve
+04
+X
+X=FX+FX+FXFYFX+FXFY-FY-FY-
+Y=+FX+FX+FXFY-FYFXFY-FY-FY
+*Osgood-Kurve
+04
+-FX+YF
+F=F
+X=X+YFFFX+YF-F-FX+YF-F-FX+YF-F-FX+YFFFX+YFFFX
+Y=YFFFX+YF-F-FX+Y
+*Sternkurve
+05
+X
+F=F--X--F
+X=F++F++F++F++F
+*Blüten 2
+05
+F+F+F+F+F
+F=F-F-F++F+F-F
+*Busch 9
+06
+F+F+F+F+F+F
+F=F[+F]F[-F][F]
+*Gewitter 2
+06
+F+F+F+F+F+F
+F=F[+F]F[-F]F-F+F
+*Sierpinski 4
+03
+F+F+F
+F=F[-F]F[-F]
+*Blume
+06
+F+F+F+F+F+F
+F=F+FF++F++FF+F
+*Muster 2
+08
+F
+F=F--F+F++F+F--F
+*Muster 3
+08
+F\90F\90F\90F
+F=F--F+F++F+F--F
+*Glasfenster
+08
+X
+F=F
+X=XF++FX-F--F-XF++FX
+*Glasfenster 2
+08
+X-F--F-X-F--F
+F=F
+X=XF++FX-F--F-XF++FX
+*Tree 2
+04
+F
+F=F[+F]F[-F]F
+*CesaroSchneeflocke
+6
+F-F-F-F-F-F
+F=F-F++F-F
+*Lévy-Kurve
+08
+F
+F=+F++FF++F--F++FF++F+
+*Lévy-Teppich
+08
+F++F++F++F++
+F=+F++FF++F--F++FF++F+
+*Klöppel-Flocke
+12
+L+L+L+L+L+L+L+L+L+L+L+L
+F=F
+X=---L++F++YFL-
+Y=+RFX--F--R+++
+L=+++X--F--RFX+
+R=-YFL++F++Y---
+*Schnabelkurve
+12
+F
+F=++HF--F--F----->17FH++H++H<17+++F----->17FH<17+++++HF
+H=--FH++H++H+++++>17HF--F--F<17---H+++++>17HF<17-----FH
+*Schnabelkurve 2
+12
+F++H++F
+F=++HF--F--F----->17FH++H++H<17+++F----->17FH<17+++++HF
+H=--FH++H++H+++++>17HF--F--F<17---H+++++>17HF<17-----FH
+*Kreuz
+4
+F+F+F+F
+F=F-FF-F+F+FF+F|F+FF+F+F-FF-F
+*Voderberg-Parkett
+30
+\84.1A\96@4.783386117G@I4.783386117/96A
+F=F
+G=G
+X=[F\78F\46.37236@3.393427F@I3.393427/46.37236F\114[\168X\24Y]F\78F\46.37236@3.393427F@I3.393427/46.37236F/78F]
+Y=[F\78F\46.37236@3.393427F@I3.393427/46.37236F/78F\168[\192Y]F\78F\46.37236@3.393427F@I3.393427/46.37236F]
+A=X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12X\12B
+B=[F\78F\46.37236@3.393427F@I3.393427/46.37236F\114F\78F\46.37236@3.393427F@I3.393427/46.37236F/78F]
+*Rhomben
+10
+X
+F=G
+G=G
+X=@0.618034+F[|Y]--F[|X][|+@0.618034G@I0.618034X]---[X]F--[Y]F
+Y=@0.618034++[X]F|+F[|Y]-[Y]F|+F[|X]
+*Drachen und Pfeile
+10
+AG+XG+AG+XG+AG+XG+AG+XG+AG+X
+F=F
+G=G
+X=[F+++@1.618033989F][++@.618033989GB|X|-G|A]
+Y=[+F][@1.618033989F][+G@.618033989|Y+X]
+A=[F][++@1.618033989F][++G---@.618033989G|X-Y|G|A]
+B=[-F][@1.618033989F][@.618033989G--AG|+B]
+*Spiralen
+16
+X++X++X++X++|G|X++X++X++X
+F=F
+G=G
+X=[FX+++++@0.7653668647F@I.7653668647[-----Y]+++++F]
+Y=[F+++++@0.7653668647F@I.7653668647[-----Y]+++++F]
+*DoublePenrose
+10
+[X][Y]++[X][Y]++[X][Y]++[X][Y]++[X][Y]
+X=+YF--BF[---AF--XF]+
+Y=-AF++XF[+++YF++BF]-
+A=YF++BF----XF[-YF----AF]++
+B=--YF++++AF[+BF++++XF]--XF
+*Dendrite
+05
+F
+F=F+F-F--F+F+F
+*Busch 10
+12
+X
+F=FF
+X=F-[[X]+X]+F[+FX]-X
+*Voderberg-Parkett (farbig)
+30
+\84.1A\96@4.783386117G@I4.783386117/96A
+F=F
+G=G
+X=[F\78F\46.37236@3.393427F@I3.393427/46.37236F\114[\168X\24Y]F\78F\46.37236@3.393427F@I3.393427/46.37236F/78F]
+Y=[F\78F\46.37236@3.393427F@I3.393427/46.37236F/78F\168[\192Y]F\78F\46.37236@3.393427F@I3.393427/46.37236F]
+A=CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12CX\12B
+B=[F\78F\46.37236@3.393427F@I3.393427/46.37236F\114F\78F\46.37236@3.393427F@I3.393427/46.37236F/78F]
+*Krishna-Knöchel
+08
+-X--X
+F=F
+X=XFX--XFX
+*Minkowski-Kurve
+04
+F
+F=F+F-F-FF+F+F-F
+*Petersilie
+15
+F
+F=F[+F][-F]F
+*Raster
+04
+X
+F=FF
+X=+FXF+FXF+FXF+FXF
+*Dragon 3
+08
+FXFY
+X=-FX++FY-
+Y=+FX--FY+
+*Minkowski-Kurve 2
+04
+F+F+F+F
+F=F+F-F-FF+F+F-F
+*Sterne
+05
+X
+F=F--X--F+
+X=F++F++F++F++F
+*Muster 4
+08
+F\90F\90F\90F
+F=F--F+F++F+F-+F
+*Muster 5
+08
+F\90F\90F\90F
+F=F--F+F+-F+F-+F
+*Muster 6
+04
+F-F-F-F
+F=F+F-F-F+F+
+*Sierpinski 5
+04
+/45HF-HF-HF-HF-\45
+H=HF-H+/45F/45HF-H
+*Sierpinski 6
+04
+/45HF-HF-HF-HF-\45
+F=F
+H=HF-H+/45F/45HF-H
+*X-Kurve 3
+06
+F+F+F+F+F+F
+F=F+FF++F++FF+F
+*Stern
+04
+F+F+F+F
+F=F-FF+F+FF-F
+*Fünfkurve
+05
+F+F+F+F+F
+F=F-F-F+F-F
+*Kachel
+08
+F
+F=AF++F-F--F-F[F-F--F-F]++F
+A=C
+*Menger
+04
+F+F+F+F
+F=F+GF-F-F-F+G+FF

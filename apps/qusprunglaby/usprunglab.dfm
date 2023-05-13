@@ -1,0 +1,851 @@
+object Fsprung: TFsprung
+  Left = 479
+  Top = 64
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Sprunglabyrinth'
+  ClientHeight = 729
+  ClientWidth = 1008
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Verdana'
+  Font.Style = []
+  OldCreateOrder = False
+  PopupMenu = PM1
+  Position = poScreenCenter
+  Scaled = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1008
+    Height = 729
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 0
+      Top = 0
+      Width = 1008
+      Height = 729
+      Align = alClient
+      BevelOuter = bvNone
+      Color = clWhite
+      DockSite = True
+      Locked = True
+      TabOrder = 0
+      object Paintbox1: TPaintBox
+        Left = 193
+        Top = 0
+        Width = 815
+        Height = 729
+        Align = alClient
+        Color = clBtnFace
+        ParentColor = False
+        OnPaint = pb1P
+      end
+      object Panel3: TPanel
+        Left = 0
+        Top = 0
+        Width = 193
+        Height = 729
+        Align = alLeft
+        BevelOuter = bvNone
+        Color = 15790320
+        Locked = True
+        TabOrder = 0
+        object Label3: TLabel
+          Left = 24
+          Top = 112
+          Width = 49
+          Height = 16
+          Caption = 'Züge 0'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Verdana'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object Label1: TLabel
+          Left = 24
+          Top = 80
+          Width = 81
+          Height = 14
+          Caption = 'Spielnummer'
+        end
+        object Label2: TLabel
+          Left = 24
+          Top = 64
+          Width = 4
+          Height = 14
+          Caption = '.'
+        end
+        object Button1: TButton
+          Left = 32
+          Top = 24
+          Width = 129
+          Height = 25
+          Caption = 'Spiel starten'
+          TabOrder = 2
+          OnClick = d2c
+        end
+        object Button2: TButton
+          Left = 32
+          Top = 144
+          Width = 129
+          Height = 25
+          Caption = 'Demonstration'
+          TabOrder = 3
+          OnClick = d3C
+        end
+        object Memo1: TMemo
+          Left = 12
+          Top = 184
+          Width = 169
+          Height = 380
+          TabStop = False
+          BorderStyle = bsNone
+          Color = 15790320
+          Lines.Strings = (
+            'Bewegen Sie die rote '
+            'Kugel auf das mit gelb '
+            'markierte Zielfeld. Die '
+            'Kugel bewegt sich jedoch '
+            'nicht beliebig, sondern '
+            'nur orthogonal, nicht '
+            'durch Wände und nur in '
+            'bestimmten '
+            'Schrittweiten, die bei der '
+            'jeweiligen Aufgabe '
+            'angegeben sind: '
+            '"1, 3, 5" bedeutet, dass '
+            'sich die Kugel zunächst '
+            'um ein Feld '
+            'weiterbewegt, im '
+            'nächsten Zug um 3 '
+            'Felder, im nächsten Zug '
+            'um 5 Felder, im nächsten '
+            'Zug wieder um 1 Feld, '
+            'usw.'
+            ''
+            'Die Bewegungsrichtung '
+            'wird hier mit den vier '
+            'Pfeiltasten links, rechts, '
+            'hoch oder runter '
+            'angegeben.')
+          TabOrder = 0
+        end
+        object Edit1: TEdit
+          Left = 122
+          Top = 76
+          Width = 49
+          Height = 22
+          TabStop = False
+          TabOrder = 1
+          Text = '1'
+        end
+        object Aufgabenliste: TListBox
+          Left = 32
+          Top = 640
+          Width = 121
+          Height = 97
+          ItemHeight = 14
+          Items.Strings = (
+            '35'
+            '[1'
+            '4,4'
+            '1,1:4,4'
+            '1,2'
+            '0'
+            '12'
+            '3'
+            '1'
+            '3'
+            '12'
+            '0'
+            '23'
+            'rrldudr'
+            '[2'
+            '4,4'
+            '1,1:1,3'
+            '1,2'
+            '0'
+            '12'
+            '3'
+            '1'
+            '3'
+            '12'
+            '0'
+            '23'
+            'rrlddudl'
+            '[3'
+            '5,5'
+            '1,3:5,3'
+            '1,2,3'
+            '2'
+            '0'
+            '0'
+            '1'
+            '0'
+            '2'
+            '4'
+            '0'
+            '2'
+            '2'
+            'rudrudrlruludrludr'
+            '[4'
+            '5,5'
+            '1,1:5,5'
+            '1,2,3,4'
+            '13'
+            '24'
+            '0'
+            '3'
+            '3'
+            '0'
+            '3'
+            '0'
+            '0'
+            '0'
+            'dduduruduuduldrlrrlrdud'
+            '[5'
+            '6,6'
+            '3,3:4,4'
+            '1,2,3'
+            '0'
+            '1'
+            '25'
+            '0'
+            '2'
+            '4'
+            '2'
+            '3'
+            '345'
+            '2'
+            '2'
+            '1'
+            'urldurdlrddlrudlludrrdudlulrlr'
+            '[6'
+            '6,6'
+            '3,1:4,6'
+            '1,2,3'
+            '3'
+            '15'
+            '3'
+            '2'
+            '5'
+            '0'
+            '5'
+            '2'
+            '2'
+            '5'
+            '5'
+            '1'
+            'drdulrdudlludrurldudlrudrlr'
+            '[7'
+            '6,6'
+            '2,1:5,6'
+            '1,2,3'
+            '2345'
+            '0'
+            '13'
+            '0'
+            '345'
+            '12'
+            '0'
+            '235'
+            '123'
+            '45'
+            '1'
+            '45'
+            'drldudrrudlrrdlrlrdud'
+            '[8'
+            '6,6'
+            '1,1:6,6'
+            '1,2,3'
+            '12'
+            '345'
+            '0'
+            '12'
+            '45'
+            '23'
+            '0'
+            '134'
+            '5'
+            '12'
+            '45'
+            '12'
+            'drdurulrlddrdud'
+            '[9'
+            '6,6'
+            '1,1:6,6'
+            '1,2,3'
+            '14'
+            '0'
+            '35'
+            '24'
+            '5'
+            '1'
+            '5'
+            '1'
+            '134'
+            '124'
+            '23'
+            '45'
+            'drrdudldlurluurlrlddrdlr'
+            '[10'
+            '6,6'
+            '1,1:6,6'
+            '1,2,3'
+            '5'
+            '1'
+            '124'
+            '24'
+            '23'
+            '45'
+            '13'
+            '0'
+            '25'
+            '24'
+            '5'
+            '1'
+            'rddrlruruldulldudurrdrud'
+            '[11'
+            '6,6'
+            '1,1:6,6'
+            '1,2,3,4'
+            '45'
+            '145'
+            '23'
+            '23'
+            '45'
+            '23'
+            '12'
+            '0'
+            '245'
+            '0'
+            '245'
+            '0'
+            'rddudduduruduududrd'
+            '[12'
+            '6,6'
+            '3,6:4,6'
+            '1,2,3,4'
+            '45'
+            '123'
+            '4'
+            '35'
+            '14'
+            '235'
+            '1'
+            '0'
+            '1'
+            '5'
+            '0'
+            '0'
+            'uududlduddudruuduudurlrduududrduddudlududdudl'
+            '[13'
+            '6,6'
+            '1,1:6,6'
+            '1,2,3,4'
+            '0'
+            '1'
+            '124'
+            '0'
+            '24'
+            '0'
+            '12'
+            '23'
+            '45'
+            '45'
+            '23'
+            '23'
+            'rrlrdlrlrdrlrrlrldlr'
+            '[14'
+            '6,6'
+            '3,1:4,1'
+            '1,3,5'
+            '3'
+            '0'
+            '0'
+            '4'
+            '0'
+            '1'
+            '0'
+            '0'
+            '0'
+            '0'
+            '0'
+            '0'
+            'drldduddrdulduduurdduddldurldul'
+            '[15'
+            '7,7'
+            '1,1:7,7'
+            '1,2,3'
+            '3'
+            '26'
+            '14'
+            '14'
+            '35'
+            '4'
+            '2'
+            '0'
+            '1'
+            '4'
+            '6'
+            '6'
+            '1'
+            '6'
+            'dddruudrdllududrdururldurldudulrddrududluddlr'
+            '[16'
+            '7,7'
+            '3,7:5,7'
+            '1,2,3,4'
+            '6'
+            '16'
+            '3'
+            '16'
+            '2'
+            '3'
+            '36'
+            '1'
+            '3'
+            '34'
+            '13'
+            '3'
+            '3'
+            '1'
+            'uluduudururlrrlrdlrlrrlrdlrduudududlrrlrldulrrd'
+            '[17'
+            '7,7'
+            '1,1:7,7'
+            '1,2,3,4'
+            '0'
+            '134'
+            '12'
+            '56'
+            '23456'
+            '0'
+            '23'
+            '12'
+            '23'
+            '456'
+            '12'
+            '45'
+            '34'
+            '45'
+            'rrlrrdlrllrldlduddudurrlrrlrdlr'
+            '[18'
+            '7,7'
+            '1,1:7,7'
+            '1,2,3,4,5'
+            '0'
+            '23'
+            '2356'
+            '6'
+            '23'
+            '2345'
+            '23'
+            '0'
+            '0'
+            '134'
+            '0'
+            '56'
+            '23'
+            '34'
+            'rdduduurlrdludurlrldudurlrdududurlrdldududr'
+            '[19'
+            '7,7'
+            '1,4:7,4'
+            '1,2,3,4,5'
+            '36'
+            '4'
+            '15'
+            '6'
+            '24'
+            '23'
+            '3'
+            '0'
+            '25'
+            '0'
+            '0'
+            '0'
+            '4'
+            '6'
+            
+              'udududrdudduududlrdurddudurludruududrdudllududlrdududlrlududurud' +
+              'udd'
+            '[20'
+            '7,7'
+            '2,2:6,6'
+            '1,2,3,4,5'
+            '56'
+            '2356'
+            '1'
+            '1'
+            '34'
+            '456'
+            '34'
+            '24'
+            '0'
+            '12'
+            '456'
+            '56'
+            '2'
+            '56'
+            'uddudlrurlrdurldududrurlrld'
+            '[21'
+            '7,7'
+            '2,2:6,6'
+            '1,2,3,4,5'
+            '24'
+            '0'
+            '12'
+            '56'
+            '145'
+            '126'
+            '45'
+            '45'
+            '2356'
+            '1'
+            '1'
+            '456'
+            '34'
+            '56'
+            'lrrlrudldudrldurlrlrdldudur'
+            '[22'
+            '7,7'
+            '1,1:7,7'
+            '1,2,3,4,5'
+            '24'
+            '0'
+            '56'
+            '26'
+            '45'
+            '0'
+            '34'
+            '34'
+            '34'
+            '1'
+            '16'
+            '45'
+            '23'
+            '34'
+            'drrlrllrldurlrlururlrrlrldrdrllrrlrd'
+            '[23'
+            '5,5'
+            '1,1:2,1'
+            '1,2,3'
+            '13'
+            '4'
+            '0'
+            '4'
+            '2'
+            '3'
+            '1'
+            '0'
+            '4'
+            '0'
+            'drdulrulruduldlrdurdul'
+            '[24'
+            '8,9'
+            '1,9:6,9'
+            '1,2,3,4,5'
+            '3'
+            '4567'
+            '134567'
+            '1367'
+            '1347'
+            '47'
+            '13'
+            '156'
+            '6'
+            '1'
+            '12568'
+            '12568'
+            '78'
+            '134678'
+            '46'
+            '167'
+            '7'
+            'uurudrrlruuddudllrlullddr'
+            '[25'
+            '6,8'
+            '1,1:6,6'
+            '1,2,3'
+            '1'
+            '0'
+            '1235'
+            '12'
+            '1235'
+            '15'
+            '15'
+            '0'
+            '0'
+            '127'
+            '157'
+            '12347'
+            '12347'
+            '1'
+            'ddduduuurldrdud'
+            '[26'
+            '7,7'
+            '2,2:6,6'
+            '1,3,5'
+            '4'
+            '1'
+            '5'
+            '5'
+            '0'
+            '56'
+            '2'
+            '0'
+            '0'
+            '0'
+            '5'
+            '0'
+            '3'
+            '6'
+            'ddudrdrluddurldrrudlrdduddlrrlududduddrd'
+            '[27'
+            '8,8'
+            '1,4:8,4'
+            '1,2,3'
+            '23'
+            '6'
+            '3'
+            '147'
+            '26'
+            '12'
+            '1'
+            '47'
+            '0'
+            '2'
+            '46'
+            '35'
+            '14'
+            '5'
+            '4'
+            '156'
+            'uddruurudrldrrrludlulurdulrurlulruulrlrrdulrdulrd'
+            '[28'
+            '8,8'
+            '4,4:5,4'
+            '1,2,3,4'
+            '2'
+            '17'
+            '6'
+            '34'
+            '3'
+            '7'
+            '2'
+            '3'
+            '5'
+            '3'
+            '156'
+            '24'
+            '23'
+            '24'
+            '167'
+            '7'
+            'ulrlududrduduudururlrrlrulrlrrlrrddudduddllrllrlrudrllrlrulrlu'
+            '[29'
+            '8,8'
+            '1,1:8,8'
+            '1,2,3,4,5'
+            '127'
+            '56'
+            '237'
+            '56'
+            '56'
+            '23'
+            '3567'
+            '12'
+            '0'
+            '17'
+            '2356'
+            '67'
+            '67'
+            '1235'
+            '67'
+            '123'
+            'ddduduurudulrudluldudurdudlrdulrlrdrd'
+            '[30'
+            '8,8'
+            '1,1:8,8'
+            '1,2,3,4,5'
+            '237'
+            '56'
+            '67'
+            '12'
+            '156'
+            '23457'
+            '12'
+            '34'
+            '45'
+            '3467'
+            '156'
+            '7'
+            '56'
+            '1245'
+            '23'
+            '156'
+            'rdrlrdldrlruudurdlrlrrdudlrrlududrlrudududrlrd'
+            '[31'
+            '8,8'
+            '1,1:8,8'
+            '1,2,3,4,5'
+            '0'
+            '34'
+            '156'
+            '6'
+            '1346'
+            '0'
+            '2345'
+            '67'
+            '23'
+            '45'
+            '4567'
+            '12'
+            '4567'
+            '2345'
+            '347'
+            '34'
+            'rrrlrlldlrllurlrlrrlrldrlrrdudlrlrlrurlrllrlrrd'
+            '[32'
+            '8,8'
+            '4,4:5,5'
+            '1,3,5'
+            '45'
+            '12'
+            '45'
+            '67'
+            '123'
+            '45'
+            '12'
+            '34'
+            '45'
+            '1267'
+            '45'
+            '7'
+            '12356'
+            '0'
+            '34'
+            '0'
+            'dudlrulrdllulrduudlrududul'
+            '[33'
+            '8,8'
+            '1,1:8,8'
+            '1,3,5'
+            '5'
+            '0'
+            '6'
+            '2'
+            '5'
+            '3'
+            '1'
+            '4'
+            '1'
+            '0'
+            '17'
+            '6'
+            '6'
+            '6'
+            '6'
+            '4'
+            'rrdlrurdldudrrlrurludrludrlrlduurdudrlurldududdrllrd'
+            '[34'
+            '8,8'
+            '4,4:5,5'
+            '1,3,5'
+            '67'
+            '12'
+            '67'
+            '45'
+            '2356'
+            '1'
+            '34'
+            '0'
+            '56'
+            '12'
+            '45'
+            '67'
+            '34'
+            '45'
+            '123'
+            '0'
+            'ulrulrddlrrludurrlrdrllrudlrlrlu'
+            '[35'
+            '8,8'
+            '4,4:5,5'
+            '1,3,5'
+            '145'
+            '0'
+            '2345'
+            '67'
+            '12'
+            '34'
+            '0'
+            '12345'
+            '17'
+            '45'
+            '237'
+            '56'
+            '1237'
+            '0'
+            '34'
+            '0'
+            'lrldurlrlrrlrrdlrlrrllurdlruudul'
+            '[#')
+          TabOrder = 4
+          Visible = False
+        end
+      end
+    end
+  end
+  object PM1: TPopupMenu
+    Left = 200
+    Top = 24
+    object menu_u: TMenuItem
+      Caption = 'u'
+      ShortCut = 38
+      Visible = False
+      OnClick = menu_uClick
+    end
+    object menu_r: TMenuItem
+      Caption = 'r'
+      ShortCut = 39
+      Visible = False
+      OnClick = menu_rClick
+    end
+    object menu_d: TMenuItem
+      Caption = 'd'
+      ShortCut = 40
+      Visible = False
+      OnClick = menu_dClick
+    end
+    object menu_l: TMenuItem
+      Caption = 'l'
+      ShortCut = 37
+      OnClick = menu_lClick
+    end
+    object menu_x: TMenuItem
+      Caption = 'x'
+      ShortCut = 13
+      OnClick = d2c
+    end
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 300
+    OnTimer = T2Timer
+    Left = 200
+    Top = 58
+  end
+end
