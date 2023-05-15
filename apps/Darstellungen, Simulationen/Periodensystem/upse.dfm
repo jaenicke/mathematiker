@@ -5342,19 +5342,6 @@ object Form1: TForm1
       OnMouseMove = PB1MouseMove
       OnPaint = PB1P
     end
-    object Label2: TLabel
-      Left = 8
-      Top = 440
-      Width = 265
-      Height = 13
-      Caption = 'F'#252'r weitere Informationen auf Element klicken'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clRed
-      Font.Height = -11
-      Font.Name = 'Verdana'
-      Font.Style = []
-      ParentFont = False
-    end
     object Panel1: TPanel
       Left = 0
       Top = 410
@@ -5391,10 +5378,24 @@ object Form1: TForm1
         Color = clWhite
         TabOrder = 1
         object PB2: TPaintBox
-          Left = 8
-          Top = 3
+          Left = 7
+          Top = 58
           Width = 105
           Height = 126
+        end
+        object Label2: TLabel
+          Left = 7
+          Top = 0
+          Width = 107
+          Height = 39
+          Caption = 'F'#252'r weitere Informationen auf Element klicken'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clRed
+          Font.Height = -11
+          Font.Name = 'Verdana'
+          Font.Style = []
+          ParentFont = False
+          WordWrap = True
         end
       end
       object LB2: TListBox

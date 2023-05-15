@@ -61,8 +61,8 @@ implementation
 
 {$R *.DFM}
 var hgfarb:integer;
-const
    elxbreite: integer = 52;
+const
    elh: array[1..118] of byte =
      (1,8,1,2,3,4,5,6,7,8,1,2,
       3,4,5,6,7,8,1,2,13,14,15,16,17,
@@ -401,148 +401,154 @@ begin
     end;
 end;
 begin
+    qu := 0;
     Bitmap := TBitmap.Create;
-    Bitmap.Width := pb1.Width;
-    Bitmap.Height := pb1.Height;
-    ziel:=bitmap.canvas;
+    try
+      Bitmap.Width := pb1.Width;
+      Bitmap.Height := pb1.Height;
+      ziel:=bitmap.canvas;
 
-    ziel.font.name:='Verdana';
-    ziel.font.size:=10;
+      ziel.font.name:='Verdana';
+      ziel.font.size:=10;
 
-    at:=round(spin2.value);
-    leg(ziel);
-    ziel.Brush.style:=bsclear;
-    if elxbreite>50 then vo:=0
-                    else vo:=7;
-    tsout(116,123,'Ia');
-    tsout(115+elxbreite-vo,163,'IIa');
-    tsout(113+2*elxbreite-vo,243,'IIIb');
-    tsout(114+3*elxbreite-vo,243,'IVb');
-    tsout(114+4*elxbreite-vo,243,'Vb');
-    tsout(114+5*elxbreite-vo,243,'VIb');
-    tsout(113+6*elxbreite-vo,243,'VIIb');
-    tsout(108+7*elxbreite-vo,243,'VIIIb');
-    tsout(113+10*elxbreite-vo,243,'Ib');
-    tsout(113+11*elxbreite-vo,243,'IIb');
-    tsout(113+12*elxbreite-vo,163,'IIIa');
-    tsout(113+13*elxbreite-vo,163,'IVa');
-    tsout(113+14*elxbreite-vo,163,'Va');
-    tsout(113+15*elxbreite-vo,163,'VIa');
-    tsout(112+16*elxbreite-vo,163,'VIIa');
-    tsout(106+17*elxbreite-vo,123,'VIIIa');
+      at:=round(spin2.value);
+      leg(ziel);
+      ziel.Brush.style:=bsclear;
+      if elxbreite>50 then vo:=0
+                      else vo:=7;
+      tsout(116,123,'Ia');
+      tsout(115+elxbreite-vo,163,'IIa');
+      tsout(113+2*elxbreite-vo,243,'IIIb');
+      tsout(114+3*elxbreite-vo,243,'IVb');
+      tsout(114+4*elxbreite-vo,243,'Vb');
+      tsout(114+5*elxbreite-vo,243,'VIb');
+      tsout(113+6*elxbreite-vo,243,'VIIb');
+      tsout(108+7*elxbreite-vo,243,'VIIIb');
+      tsout(113+10*elxbreite-vo,243,'Ib');
+      tsout(113+11*elxbreite-vo,243,'IIb');
+      tsout(113+12*elxbreite-vo,163,'IIIa');
+      tsout(113+13*elxbreite-vo,163,'IVa');
+      tsout(113+14*elxbreite-vo,163,'Va');
+      tsout(113+15*elxbreite-vo,163,'VIa');
+      tsout(112+16*elxbreite-vo,163,'VIIa');
+      tsout(106+17*elxbreite-vo,123,'VIIIa');
 
-    if ageschichte then
-    begin
       liste:=tstringlist.create;
-      liste.assign(lb4.Items);
-      qu:=liste.indexof('[Zeit]')+1;
-      for i:=1 to elementzahl do
-      begin
-        kk:=liste[qu]; inc(qu);
-        val(copy(kk,1,4),histor[i],code);
-        if code<>0 then histor[i]:=1500;
-      end;
-      liste.free;
-    end;
+      try
+        if ageschichte then
+        begin
+          liste.assign(lb4.Items);
+          qu:=liste.indexof('[Zeit]')+1;
+          for i:=1 to elementzahl do
+          begin
+            kk:=liste[qu]; inc(qu);
+            val(copy(kk,1,4),histor[i],code);
+            if code<>0 then histor[i]:=1500;
+          end;
+          liste.Clear;
+        end;
 
-    if hgfarb>2 then
-    begin
-      liste:=tstringlist.create;
-      liste.assign(lb4.Items);
-      case hgfarb of
-        3 : ks:='[Neg]';
-        4 : ks:='[Zeit]';
-        5 : ks:='[Dichte]';
-        6 : ks:='[STEmp]';
-        7 : ks:='[SiTemp]';
-        8 : ks:='[IRadius]';
-        9 : ks:='[IVolt]';
-       10 : ks:='[Erde]';
-       11 : ks:='[ARadius]';
-       12 : ks:='[Enthalpie]';
-       13 : ks:='[Wert]';
-       14 : ks:='[IVolt2]';
-       15 : ks:='[IVolt3]';
-       16 : ks:='[ES]';
-       17 : ks:='[Agg2]';
-       18 : ks:='[SHeat]';
-      end;
-      qu:=liste.indexof(ks)+1;
-    end;
+        if hgfarb>2 then
+        begin
+          liste.assign(lb4.Items);
+          case hgfarb of
+            3 : ks:='[Neg]';
+            4 : ks:='[Zeit]';
+            5 : ks:='[Dichte]';
+            6 : ks:='[STEmp]';
+            7 : ks:='[SiTemp]';
+            8 : ks:='[IRadius]';
+            9 : ks:='[IVolt]';
+           10 : ks:='[Erde]';
+           11 : ks:='[ARadius]';
+           12 : ks:='[Enthalpie]';
+           13 : ks:='[Wert]';
+           14 : ks:='[IVolt2]';
+           15 : ks:='[IVolt3]';
+           16 : ks:='[ES]';
+           17 : ks:='[Agg2]';
+           18 : ks:='[SHeat]';
+          end;
+          qu:=liste.indexof(ks)+1;
+        end;
 
-    for i:=1 to elementzahl do
-    begin
-      case hgfarb of
-        3 : begin
-              kk:=liste[qu];
-              inc(qu);
-              val(kk,rr,code);
-              spezf:=trunc(10*rr);
-            end;
-       13 : begin
-              kk:=liste[qu];
-              inc(qu);
-              val(copy(kk,1,2),spezf,code);
-            end;
-        4 : begin
-              kk:=liste[qu];
-              inc(qu);
-              val(copy(kk,1,4),spezf,code);
-            end;
-        5 : begin
-              kk:=liste[qu];
-              inc(qu);
-              val(kk,rr,code);
-              if code<>0 then spezf:=-1000
-              else
-              begin
-                if rr<0 then spezf:=-1
-                        else spezf:=trunc(rr);
-              end;
-            end;
-    6,7,8,11,12,18 :
-            begin
-              kk:=liste[qu];
-              inc(qu);
-              val(kk,rr,code);
-              spezf:=trunc(rr);
-              if code<>0 then spezf:=-10000
-            end;
-  14,15,9 : begin
-              kk:=liste[qu];
-              inc(qu);
-              val(kk,rr,code);
-              spezf:=trunc(100*rr);
-            end;
-       10 : begin
-              kk:=liste[qu];
-              inc(qu);
-              val(kk,rr,code);
-              spezf:=trunc(10*rr);
-            end;
-       16 : begin
-              if i<96 then
-              begin
-                kk:=liste[qu];
-                inc(qu);
-                val(copy(kk,pos(',',kk)+1,255),spezf,code);
-              end
-              else spezf:=0;
-            end;
-       17 : begin
-              kk:=liste[qu];
-              inc(qu);
-              val(copy(kk,1,pos('/',kk)-1),ao,code);
-              val(copy(kk,pos('/',kk)+1,255),au,code);
-              if code<>0 then kk:='-' else kk:='#';
-            end;
+        for i:=1 to elementzahl do
+        begin
+          case hgfarb of
+            3 : begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(kk,rr,code);
+                  spezf:=trunc(10*rr);
+                end;
+           13 : begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(copy(kk,1,2),spezf,code);
+                end;
+            4 : begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(copy(kk,1,4),spezf,code);
+                end;
+            5 : begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(kk,rr,code);
+                  if code<>0 then spezf:=-1000
+                  else
+                  begin
+                    if rr<0 then spezf:=-1
+                            else spezf:=trunc(rr);
+                  end;
+                end;
+        6,7,8,11,12,18 :
+                begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(kk,rr,code);
+                  spezf:=trunc(rr);
+                  if code<>0 then spezf:=-10000
+                end;
+      14,15,9 : begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(kk,rr,code);
+                  spezf:=trunc(100*rr);
+                end;
+           10 : begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(kk,rr,code);
+                  spezf:=trunc(10*rr);
+                end;
+           16 : begin
+                  if i<96 then
+                  begin
+                    kk:=liste[qu];
+                    inc(qu);
+                    val(copy(kk,pos(',',kk)+1,255),spezf,code);
+                  end
+                  else spezf:=0;
+                end;
+           17 : begin
+                  kk:=liste[qu];
+                  inc(qu);
+                  val(copy(kk,1,pos('/',kk)-1),ao,code);
+                  val(copy(kk,pos('/',kk)+1,255),au,code);
+                  if code<>0 then kk:='-' else kk:='#';
+                end;
+          end;
+          element(i);
+        end;
+      finally
+        liste.free;
       end;
-      element(i);
-    end;
-    if hgfarb>2 then liste.free;
 
-    pb1.canvas.draw(0,0,bitmap);
-    Bitmap.Free;
+      pb1.canvas.draw(0,0,bitmap);
+    finally
+      Bitmap.Free;
+    end;
 end;
 
 procedure TForm1.CL1C(Sender: TObject);
@@ -631,7 +637,7 @@ begin
           x0:=x-1;
           y0:=y;
           wi0:=wi;
-          str(masse[j],kk);
+          kk := IntToStr(masse[j]);
           kk:=#9+'Isotop '+kk+' : '+floattostr(anteil[j])+' %';
           if radio[j] then kk:=kk+' , aktiv';
           lb2.items.add(kk);
@@ -641,7 +647,7 @@ begin
       begin
         bitmap.canvas.brush.color:=superfarben[3];
         bitmap.canvas.ellipse(5,5,81,81);
-        str(masse[1],kk);
+        kk := IntToStr(masse[1]);
         kp:=floattostr(anteil[1]);
         lb2.items.add(#9+'Isotop '+kk+' : '+kp+' %');
       end;
@@ -669,12 +675,12 @@ begin
       lb2.items.add('lateinischer Name'#9+lb3.items.strings[nr+117]);
       if elh[nr]<10 then
       begin
-        str(elh[nr],kk);
-        kk:=kk+'.Hauptgruppe'+_gruppe[99+elh[nr]];
+        kk := IntToStr(elh[nr]);
+        kk:=kk+'.Hauptgruppe'+string(_gruppe[99+elh[nr]]);
       end;
       if (elh[nr]>10) and (elh[nr]<20) then
       begin
-        str(elh[nr]-10,kk);
+        kk := IntToStr(elh[nr]-10);
         kk:=kk+'.Nebengruppe';
       end;
       if elh[nr]=20 then kk:=kk+'; Lanthanid';
@@ -737,11 +743,11 @@ begin
       lb2.items.add(#9+'3s = '+kk[4]+'    3p = '+kk[5]+'    3d = '+k1);
       if kk[9]=':' then k1:='10'
                    else k1:=kk[9];
-      sc:=ord(kk[10])-48; str(sc,k2);
+      sc:=ord(kk[10])-48; k2 := IntToStr(sc);
       lb2.items.add(#9+'4s = '+kk[7]+'    4p = '+kk[8]+'    4d = '+k1+'    4f = '+k2);
       if kk[13]=':' then k1:='10'
                     else k1:=kk[13];
-      sc:=ord(kk[14])-48; str(sc,k2);
+      sc:=ord(kk[14])-48; k2 := IntToStr(sc);
       lb2.items.add(#9+'5s = '+kk[11]+'    5p = '+kk[12]+'    5d = '+k1+'    5f = '+k2);
       if kk[17]=':' then k1:='10'
                     else k1:=kk[17];
